@@ -1,1 +1,88 @@
 @use "index.scss";
+@use "variables" as var;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: dark;
+    color: #ffffff;
+    background-color: var.$bg;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    body {
+        min-height: 100vh;
+        max-height: 100vh;
+        position: relative;
+        margin: 0;
+        overflow: hidden;
+        padding: 1px 0;
+        
+        &::before {
+            content: "";
+            background: url("../assets/images/bg.svg") no-repeat center center fixed;
+            opacity: 0.33;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;  
+        }
+
+        h1{
+            font-family: jason;
+        }
+
+        h2, h3{
+            font-family: Outfit-Medium;
+        }
+
+        p{
+            font-family: Outfit-Regular;
+        }
+    }
+}
+
+@font-face {
+    font-family: jason;
+    src: url("../assets/fonts/jason.woff") format("opentype");
+}
+
+@font-face {
+    font-family: Outfit-ExtraLight;
+    src: url("../assets/fonts/Outfit-ExtraLight.woff") format("opentype");
+}
+
+@font-face {
+    font-family: Outfit-Light;
+    src: url("../assets/fonts/Outfit-Light.woff") format("opentype");
+}
+
+@font-face {
+    font-family: Outfit-Medium;
+    src: url("../assets/fonts/Outfit-Medium.woff") format("opentype");
+}
+
+@font-face {
+    font-family: Outfit-Regular;
+    src: url("../assets/fonts/Outfit-Regular.woff") format("opentype");
+}
+
+@font-face {
+    font-family: Outfit-SemiBold;
+    src: url("../assets/fonts/Outfit-SemiBold.woff") format("opentype");
+}
+
+@font-face {
+    font-family: Outfit-Thin;
+    src: url("../assets/fonts/Outfit-Thin.woff") format("opentype");
+}
