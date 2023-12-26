@@ -6,7 +6,6 @@
 
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
     font-weight: 400;
 
     color-scheme: dark;
@@ -48,6 +47,14 @@
 
         p{
             font-family: Outfit-Regular;
+        }
+
+        .slogan-nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            margin-top: 30px;
         }
     }
 }
