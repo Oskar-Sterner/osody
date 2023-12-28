@@ -1,9 +1,12 @@
+import ChosenContent from './ChosenContent';
 import { StyledContentPanel } from './StyledContentPanel';
 
 function ContentPanel() {
   return (
     <>
-      <StyledContentPanel />
+      <StyledContentPanel>
+        <ChosenContent />
+      </StyledContentPanel>
     </>
   );
 }

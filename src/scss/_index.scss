@@ -1,1 +1,6 @@
 @use "variables" as var;
+
+.ChosenContent {
+    display: flex;
+    flex-direction: row;
+}

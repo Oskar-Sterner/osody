@@ -7,4 +7,5 @@ export const Main = styled.div`
   padding-right: 6rem;
   display: flex;
   flex-direction: column;
+  height: 86.5vh;
 `;
