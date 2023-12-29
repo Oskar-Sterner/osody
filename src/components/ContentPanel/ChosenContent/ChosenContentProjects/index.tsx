@@ -1,12 +1,11 @@
+import ProjectPanel from './ProjectPanel';
 import { StyledChosenContentProjects } from './StyledChosenContentProjects';
 
 function ChosenContentProjects() {
   return (
     <>
       <StyledChosenContentProjects>
-        <a>1</a>
-        <a>2</a>
-        <a>3</a>
+        <ProjectPanel />
       </StyledChosenContentProjects>
     </>
   );

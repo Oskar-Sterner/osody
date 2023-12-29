@@ -17,6 +17,7 @@ export const StyledFooter = styled.div`
     }
     &:hover {
       transform: translateY(-4px);
+      filter: drop-shadow(0px 0px 10px #008ab8);
       cursor: pointer;
       svg {
         fill: #00bfff;

@@ -8,5 +8,5 @@ export const StyledContentPanel = styled.div`
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   margin-bottom: 2rem;
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 0.5rem 1rem 2rem;
 `;

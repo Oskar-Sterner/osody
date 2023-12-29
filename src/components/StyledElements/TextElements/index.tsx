@@ -10,6 +10,7 @@ interface StyledProps {
   paddingbottom?: string;
   paddingleft?: string;
   underline?: boolean;
+  uppercase?: boolean;
 }
 
 export const StyledH1 = styled.h1<StyledProps>`
@@ -26,6 +27,7 @@ export const StyledH1 = styled.h1<StyledProps>`
   padding-bottom: ${props => props.paddingbottom || '0'};
   padding-left: ${props => props.paddingleft || '0'};
   text-decoration: ${props => (props.underline ? 'underline #00BFFF' : 'none')};
+  text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `;
 
 export const StyledH2 = styled.h2<StyledProps>`
@@ -42,6 +44,7 @@ export const StyledH2 = styled.h2<StyledProps>`
   padding-bottom: ${props => props.paddingbottom || '0'};
   padding-left: ${props => props.paddingleft || '0'};
   text-decoration: ${props => (props.underline ? 'underline #00BFFF' : 'none')};
+  text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `;
 
 export const StyledH3 = styled.h3<StyledProps>`
@@ -58,6 +61,7 @@ export const StyledH3 = styled.h3<StyledProps>`
   padding-bottom: ${props => props.paddingbottom || '0'};
   padding-left: ${props => props.paddingleft || '0'};
   text-decoration: ${props => (props.underline ? 'underline #00BFFF' : 'none')};
+  text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `;
 
 export const StyledP = styled.p<StyledProps>`
@@ -74,6 +78,7 @@ export const StyledP = styled.p<StyledProps>`
   padding-bottom: ${props => props.paddingbottom || '0'};
   padding-left: ${props => props.paddingleft || '0'};
   text-decoration: ${props => (props.underline ? 'underline #00BFFF' : 'none')};
+  text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `;
 
 export const StyledSmallP = styled.p<StyledProps>`
@@ -90,4 +95,5 @@ export const StyledSmallP = styled.p<StyledProps>`
   padding-bottom: ${props => props.paddingbottom || '0'};
   padding-left: ${props => props.paddingleft || '0'};
   text-decoration: ${props => (props.underline ? 'underline #00BFFF' : 'none')};
+  text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `;
