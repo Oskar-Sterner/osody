@@ -19,6 +19,9 @@ export const StyledNavbar = styled.div`
     svg {
       transition: fill 0.2s ease-in-out;
     }
+    svg.active {
+      fill: #00bfff !important;
+    }
     &:hover {
       transform: translateY(-4px);
       filter: drop-shadow(0px 0px 10px #008ab8);

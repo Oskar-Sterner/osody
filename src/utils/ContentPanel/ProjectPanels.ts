@@ -24,6 +24,24 @@ const ProjectPanels: ProjectPanelType[] = [
     link: '#',
     bg: 'https://i.imgur.com/2axkMXg.png',
   },
+  {
+    title: 'Project 4',
+    description: 'Description 4',
+    link: '#',
+    bg: 'https://i.imgur.com/2axkMXg.png',
+  },
+  {
+    title: 'Project 5',
+    description: 'Description 5',
+    link: '#',
+    bg: 'https://i.imgur.com/2axkMXg.png',
+  },
+  {
+    title: 'Project 6',
+    description: 'Description 6',
+    link: '#',
+    bg: 'https://i.imgur.com/2axkMXg.png',
+  },
 ];
 
 export default ProjectPanels;

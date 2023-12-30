@@ -6,7 +6,7 @@ function Navbar() {
     <>
       <StyledNavbar>
         <a>
-          <InlineSVG src="/src/assets/images/projects.svg" />
+          <InlineSVG className="active" src="/src/assets/images/projects.svg" />
         </a>
         <a>
           <InlineSVG src="/src/assets/images/about.svg" />

@@ -22,6 +22,36 @@
         color: inherit;
     }
 
+    ::marker {
+        color: var.$primary;
+        -webkit-box-shadow: 0px 0px 15px 0px rgba(0,191,255,1);
+        -moz-box-shadow: 0px 0px 15px 0px rgba(0,191,255,1);
+        box-shadow: 0px 0px 15px 0px rgba(0,191,255,1);
+    }
+    
+    ::-webkit-scrollbar {
+        width: 0.5em;
+    }
+    ::-webkit-scrollbar {
+        width: 5px!important;
+        background-color: transparent!important;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #00bbff;
+    }
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px!important;
+        height: 20px!important;
+        background-color: #00bbff!important;
+        background-image: -webkit-linear-gradient(90deg,transparent,rgba(0,0,0,.4) 50%,transparent,transparent)!important;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-track {
+        border-radius: 10px!important;
+    }      
+
     body {
         min-height: 100vh;
         max-height: 100vh;
@@ -52,14 +82,6 @@
 
         p{
             font-family: Outfit-Regular;
-        }
-
-        .slogan-nav{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            margin-top: 30px;
         }
     }
 }
