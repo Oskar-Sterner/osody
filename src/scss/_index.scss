@@ -4,6 +4,10 @@
     display: flex;
     flex-direction: row;
     height: 100%;
+
+    @media (max-width: 550px) {
+        flex-direction: column;
+    }
 }
 
 .slogan-nav{
@@ -12,4 +16,8 @@
     justify-content: space-between;
     margin-bottom: 15px;
     margin-top: 30px;
+
+    @media (max-width: 640px) {
+        flex-direction: column;
+    }
 }

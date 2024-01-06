@@ -2,6 +2,7 @@ import ContentPanel from './components/ContentPanel';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import { Main } from './components/StyledElements/Layout';
+import { ActiveComponentProvider } from './ActiveComponentContext';
 import {
   StyledH1,
   StyledP,
@@ -9,7 +10,7 @@ import {
 
 function App() {
   return (
-    <>
+    <ActiveComponentProvider>
       <Main>
         <StyledH1>OSODY STUDIOS</StyledH1>
         <div className="slogan-nav">
@@ -21,7 +22,7 @@ function App() {
         <ContentPanel />
         <Footer />
       </Main>
-    </>
+    </ActiveComponentProvider>
   );
 }
 

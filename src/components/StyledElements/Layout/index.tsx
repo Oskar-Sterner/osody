@@ -8,4 +8,8 @@ export const Main = styled.div`
   display: flex;
   flex-direction: column;
   height: 86.5vh;
+  @media (max-width: 580px) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 `;

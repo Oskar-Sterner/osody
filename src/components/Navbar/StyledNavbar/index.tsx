@@ -31,4 +31,8 @@ export const StyledNavbar = styled.div`
       }
     }
   }
+
+  @media (max-width: 640px) {
+    width: 100%;
+  }
 `;

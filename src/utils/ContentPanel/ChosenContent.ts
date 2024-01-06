@@ -1,6 +1,7 @@
 export type ContentType = {
   title: string;
   description: string;
+  img?: string;
 };
 
 const ChosenContent: ContentType[] = [
@@ -11,7 +12,8 @@ const ChosenContent: ContentType[] = [
   },
   {
     title: 'About',
-    description: 'string',
+    description: '',
+    img: 'https://i.imgur.com/Nk54FgU.gif',
   },
   {
     title: 'Mail',

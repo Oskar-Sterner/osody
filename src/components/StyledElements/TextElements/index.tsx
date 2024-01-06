@@ -28,6 +28,22 @@ export const StyledH1 = styled.h1<StyledProps>`
   padding-left: ${props => props.paddingleft || '0'};
   text-decoration: ${props => (props.underline ? 'underline #00BFFF' : 'none')};
   text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
+
+  @media (max-width: 1130px) {
+    font-size: 6vw;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 432px) {
+    font-size: 25px;
+  }
+
+  @media (max-width: 376px) {
+    font-size: 20px;
+  }
 `;
 
 export const StyledH2 = styled.h2<StyledProps>`

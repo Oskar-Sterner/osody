@@ -5,4 +5,9 @@ export const StyledChosenContentText = styled.div`
   flex-direction: column;
   height: 100%;
   width: 205px;
+  overflow: auto;
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 `;
