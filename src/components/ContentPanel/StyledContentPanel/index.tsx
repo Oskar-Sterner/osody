@@ -14,4 +14,8 @@ export const StyledContentPanel = styled.div`
   @media (max-width: 730px) {
     overflow: hidden;
   }
+
+  @media (max-width: 550px) {
+    padding: 1rem 0.5rem 0rem 0.5rem;
+  }
 `;

@@ -10,6 +10,7 @@ interface StyledProps {
   paddingbottom?: string;
   paddingleft?: string;
   height?: string;
+  calculatedheight?: string;
   width?: string;
   borderradius?: string;
 }
@@ -24,6 +25,7 @@ export const StyledImg = styled.img<StyledProps>`
   padding-bottom: ${props => props.paddingbottom || '0'};
   padding-left: ${props => props.paddingleft || '0'};
   height: ${props => props.height || 'auto'};
+  height: ${({ calculatedheight }) => `calc(${calculatedheight} - 54px)`};
   width: ${props => props.width || 'auto'};
   border-radius: ${props => props.borderradius || '0'};
 `;

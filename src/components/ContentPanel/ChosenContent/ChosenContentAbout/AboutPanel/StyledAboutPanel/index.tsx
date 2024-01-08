@@ -2,11 +2,19 @@ import styled from 'styled-components';
 
 export const StyledAboutPanel = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: 100%;
   row-gap: 5dvh;
-  padding: 0rem 2rem 1rem 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @media (max-width: 550px) {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    row-gap: 0;
+    justify-content: space-between;
+  }
 `;

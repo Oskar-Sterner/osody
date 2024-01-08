@@ -31,7 +31,7 @@ function ChosenContentDescription() {
     <StyledImg
       src={content.img}
       alt={content.title}
-      height="100%"
+      calculatedheight="100%"
       borderradius="15px"
     />
   ) : (

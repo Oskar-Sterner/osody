@@ -20,4 +20,10 @@
     @media (max-width: 640px) {
         flex-direction: column;
     }
+
+    @media (max-width: 400px) {
+        row-gap: 15px;
+        margin-bottom: 15px;
+        margin-top: 0px;
+      }
 }

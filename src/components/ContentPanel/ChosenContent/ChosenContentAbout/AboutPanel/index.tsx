@@ -11,7 +11,7 @@ function AboutPanel() {
         <StyledImg
           src="https://i.imgur.com/GS49Ar8.png"
           alt="Osody Studios Logo"
-          width="400px"
+          width="30dvh"
           margintop="0.75rem"
         />
         <StyledInformationArea>

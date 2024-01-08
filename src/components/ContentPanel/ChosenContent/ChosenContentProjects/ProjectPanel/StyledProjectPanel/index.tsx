@@ -22,4 +22,8 @@ export const StyledProjectPanel = styled.div<StyledProps>`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media (max-width: 550px) {
+    padding: 1rem 0.5rem 0rem 0.5rem;
+  }
 `;

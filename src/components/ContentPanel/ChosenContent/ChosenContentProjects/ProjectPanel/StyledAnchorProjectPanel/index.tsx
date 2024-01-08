@@ -19,5 +19,6 @@ export const StyledAnchorProjectPanel = styled.a`
 
   @media (max-width: 550px) {
     height: 10dvh;
+    width: 100%;
   }
 `;

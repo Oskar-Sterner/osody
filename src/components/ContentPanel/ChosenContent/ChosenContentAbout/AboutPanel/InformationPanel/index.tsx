@@ -16,8 +16,31 @@ function InformationPanel() {
           <StyledH2>{panelData.title}</StyledH2>
           <StyledP>{panelData.description}</StyledP>
           <StyledH3>{panelData.use}</StyledH3>
+          <StyledP>{panelData.ides}</StyledP>
           <StyledToolsPanel>
-            {panelData.icons.map((icon, iconIndex) => (
+            {panelData.idesIcons.map((icon, iconIndex) => (
+              <StyledImg
+                width="32px"
+                key={iconIndex}
+                src={icon}
+                alt={panelData.title}
+              />
+            ))}
+          </StyledToolsPanel>
+          <StyledP>{panelData.languages}</StyledP>
+          <StyledToolsPanel>
+            {panelData.languagesIcons.map((icon, iconIndex) => (
+              <StyledImg
+                width="32px"
+                key={iconIndex}
+                src={icon}
+                alt={panelData.title}
+              />
+            ))}
+          </StyledToolsPanel>
+          <StyledP>{panelData.editing}</StyledP>
+          <StyledToolsPanel>
+            {panelData.editingIcons.map((icon, iconIndex) => (
               <StyledImg
                 width="32px"
                 key={iconIndex}
