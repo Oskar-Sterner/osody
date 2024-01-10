@@ -17,7 +17,9 @@ const ChosenContent: ContentType[] = [
   },
   {
     title: 'Mail',
-    description: 'string',
+    description: `Got a business idea or a project in mind? We're here to listen. 
+    Send us your ideas, questions, or thoughts, and we'll get back to you promptly. 
+    Let's make great things happen together!`,
   },
   {
     title: 'Clients',
