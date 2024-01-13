@@ -8,7 +8,7 @@ const ChosenContent: ContentType[] = [
   {
     title: 'Projects',
     description:
-      'Here are some of the projects we have been working on. Please feel free to click on a panel/pane to explore each project and learn more about what we do, how we do it, and who we are.',
+      'Here are some of the projects we have been working on. Please feel free to click on a panel/pane to explore each project and learn more about what we do, how we do it, and why we do it.',
   },
   {
     title: 'About',

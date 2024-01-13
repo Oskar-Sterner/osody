@@ -16,6 +16,7 @@ interface StyledProps {
 
 export const StyledInputField = styled.input<StyledProps>`
   all: unset;
+  display: block;
   box-sizing: border-box;
   color: #dadada;
   margin-top: ${props => props.margintop || '5px'};
@@ -26,7 +27,7 @@ export const StyledInputField = styled.input<StyledProps>`
   padding-right: ${props => props.paddingright || '0px'};
   padding-bottom: ${props => props.paddingbottom || '1px'};
   padding-left: ${props => props.paddingleft || '5px'};
-  height: ${props => props.height || '44px'};
+  height: ${props => props.height || '5dvh'};
   width: ${props => props.width || '100%'};
   border-radius: ${props => props.borderradius || '10px'};
   background: rgba(35, 35, 35, 0.2);

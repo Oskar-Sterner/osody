@@ -9,13 +9,16 @@ function Footer() {
     <>
       <StyledFooter>
         <Seperator />
-        <a>
+        <a href="https://github.com/OSODY-STUDIOS" target="_blank">
           <InlineSVG src="/src/assets/images/github.svg" />
         </a>
-        <a>
+        <a href="https://discord.gg/FsTtQBdSPn" target="_blank">
           <InlineSVG src="/src/assets/images/discord.svg" />
         </a>
-        <a>
+        <a
+          href="https://steamcommunity.com/groups/osody-studios"
+          target="_blank"
+        >
           <InlineSVG src="/src/assets/images/steam.svg" />
         </a>
         <Seperator />

@@ -16,11 +16,12 @@ interface StyledProps {
 
 export const StyledSubmitButton = styled.button<StyledProps>`
   all: unset;
+  display: block;
   color: #ffffff;
   font-weight: 600;
   box-sizing: border-box;
   text-align: center;
-  margin-top: ${props => props.margintop || '10px'};
+  margin-top: ${props => props.margintop || '5px'};
   margin-right: ${props => props.marginright || '0'};
   margin-bottom: ${props => props.marginbottom || '0'};
   margin-left: ${props => props.marginleft || '0'};
@@ -28,7 +29,7 @@ export const StyledSubmitButton = styled.button<StyledProps>`
   padding-right: ${props => props.paddingright || '0px'};
   padding-bottom: ${props => props.paddingbottom || '0px'};
   padding-left: ${props => props.paddingleft || '0px'};
-  height: ${props => props.height || '44px'};
+  height: ${props => props.height || '5dvh'};
   width: ${props => props.width || '100%'};
   border-radius: ${props => props.borderradius || '10px'};
   background: #009acd;
