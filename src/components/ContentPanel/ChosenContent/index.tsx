@@ -12,7 +12,7 @@ function ChosenContent() {
   return (
     <>
       <div className="ChosenContent">
-        <StyledChosenContentText>
+        <StyledChosenContentText isMail={activeComponent === 'mail'}>
           <ChosenContentTitle />
           <ChosenContentDescription />
         </StyledChosenContentText>

@@ -7,4 +7,8 @@ export const StyledIframe = styled.iframe`
   @media (max-width: 1200px) {
     width: 250px;
   }
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 `;

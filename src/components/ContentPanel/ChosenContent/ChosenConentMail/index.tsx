@@ -1,11 +1,14 @@
 import MailPanel from './MailPanel';
 import DiscordPanel from './MailPanel/DiscordPanel';
+import { StyledChosenContentMail } from './StyledChosenContentMail';
 
 function ChosenConentMail() {
   return (
     <>
-      <MailPanel />
-      <DiscordPanel />
+      <StyledChosenContentMail>
+        <MailPanel />
+        <DiscordPanel />
+      </StyledChosenContentMail>
     </>
   );
 }

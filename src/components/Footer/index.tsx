@@ -25,7 +25,7 @@ function Footer() {
       </StyledFooter>
       <StyledFooterText>
         <StyledSmallP>
-          Copyright ©2023 OSODY.SE All rights reserved.
+          Copyright ©2024 OSODY.SE All rights reserved.
         </StyledSmallP>
       </StyledFooterText>
     </>

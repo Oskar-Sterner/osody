@@ -23,6 +23,7 @@ function MailForm() {
   });
   const [emailSent, setEmailSent] = useState(false);
   const [emailError, setEmailError] = useState(false);
+  const [emailSending, setEmailSending] = useState(false);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -32,6 +33,8 @@ function MailForm() {
 
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    setEmailSending(true);
 
     emailjs
       .send(
@@ -75,7 +78,7 @@ function MailForm() {
           onChange={handleChange}
           required
         />
-        <SubmitButton />
+        <SubmitButton text={emailSending ? 'Sending...' : 'Send'} />
       </form>
       {emailSent && <Success />}
       {emailError && <Error />}

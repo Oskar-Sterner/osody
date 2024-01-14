@@ -10,6 +10,9 @@ export const StyledChosenContentProjects = styled.div`
   justify-items: center;
   align-items: center;
   overflow: auto;
+  animation: fadeInAnimation ease 0.4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
   & > :not(:nth-last-child(-n + 3)) {
     margin-bottom: 2dvh;

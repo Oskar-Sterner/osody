@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const StyledChosenContentText = styled.div`
+interface StyledChosenContentTextProps {
+  isMail?: boolean;
+}
+
+export const StyledChosenContentText = styled.div<StyledChosenContentTextProps>`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -10,5 +14,6 @@ export const StyledChosenContentText = styled.div`
   @media (max-width: 550px) {
     width: 100%;
     overflow: auto;
+    display: ${props => (props.isMail ? 'none' : 'flex')};
   }
 `;
