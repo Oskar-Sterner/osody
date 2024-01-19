@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import emailjs from 'emailjs-com';
 import InputField from '../../../../../StyledElements/FormElements/InputField';
 import SubmitButton from '../../../../../StyledElements/FormElements/SubmitButton';

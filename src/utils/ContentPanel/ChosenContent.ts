@@ -23,7 +23,8 @@ const ChosenContent: ContentType[] = [
   },
   {
     title: 'Clients',
-    description: 'string',
+    description:
+      'Curious about who we have been wortking with? Explore some of our beloved clients we have partnered with over the years and see the projects we have undertaken together.',
   },
 ];
 

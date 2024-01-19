@@ -2,7 +2,7 @@ import MailPanel from './MailPanel';
 import DiscordPanel from './MailPanel/DiscordPanel';
 import { StyledChosenContentMail } from './StyledChosenContentMail';
 
-function ChosenConentMail() {
+function ChosenContentMail() {
   return (
     <>
       <StyledChosenContentMail>
@@ -13,4 +13,4 @@ function ChosenConentMail() {
   );
 }
 
-export default ChosenConentMail;
+export default ChosenContentMail;
