@@ -10,8 +10,12 @@ function ClientPanel() {
   return (
     <>
       {ClientPanels.map((panel, index) => (
-        <StyledAnchorClientPanel href={panel.link} className="ProjectPanel">
-          <StyledClientPanel key={index} bg={panel.bg}>
+        <StyledAnchorClientPanel
+          key={index}
+          href={panel.link}
+          className="ProjectPanel"
+        >
+          <StyledClientPanel bg={panel.bg}>
             <StyledH3 uppercase>{panel.title}</StyledH3>
             <StyledSmallP>{panel.description}</StyledSmallP>
           </StyledClientPanel>

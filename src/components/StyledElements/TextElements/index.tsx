@@ -13,7 +13,9 @@ interface StyledProps {
   uppercase?: boolean;
 }
 
-export const StyledH1 = styled.h1<StyledProps>`
+export const StyledH1 = styled.h1.withConfig({
+  shouldForwardProp: prop => !['underline', 'uppercase'].includes(prop),
+})<StyledProps>`
   font-size: 75px;
   font-weight: 400;
   line-height: 37.5px;
@@ -46,7 +48,9 @@ export const StyledH1 = styled.h1<StyledProps>`
   }
 `;
 
-export const StyledH2 = styled.h2<StyledProps>`
+export const StyledH2 = styled.h2.withConfig({
+  shouldForwardProp: prop => !['underline', 'uppercase'].includes(prop),
+})<StyledProps>`
   font-size: 36px;
   font-weight: 500;
   line-height: 54px;
@@ -63,7 +67,9 @@ export const StyledH2 = styled.h2<StyledProps>`
   text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `;
 
-export const StyledH3 = styled.h3<StyledProps>`
+export const StyledH3 = styled.h3.withConfig({
+  shouldForwardProp: prop => !['underline', 'uppercase'].includes(prop),
+})<StyledProps>`
   font-size: 27px;
   font-weight: 500;
   line-height: 40.5px;
@@ -80,7 +86,9 @@ export const StyledH3 = styled.h3<StyledProps>`
   text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `;
 
-export const StyledP = styled.p<StyledProps>`
+export const StyledP = styled.p.withConfig({
+  shouldForwardProp: prop => !['underline', 'uppercase'].includes(prop),
+})<StyledProps>`
   font-size: 18px;
   font-weight: 400;
   line-height: 30px;
@@ -97,7 +105,9 @@ export const StyledP = styled.p<StyledProps>`
   text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
 `;
 
-export const StyledSmallP = styled.p<StyledProps>`
+export const StyledSmallP = styled.p.withConfig({
+  shouldForwardProp: prop => !['underline', 'uppercase'].includes(prop),
+})<StyledProps>`
   font-size: 13px;
   font-weight: 400;
   line-height: 19.5px;

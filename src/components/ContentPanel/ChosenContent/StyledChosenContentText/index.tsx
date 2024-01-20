@@ -4,7 +4,9 @@ interface StyledChosenContentTextProps {
   isMail?: boolean;
 }
 
-export const StyledChosenContentText = styled.div<StyledChosenContentTextProps>`
+export const StyledChosenContentText = styled.div.withConfig({
+  shouldForwardProp: prop => prop !== 'isMail',
+})<StyledChosenContentTextProps>`
   display: flex;
   flex-direction: column;
   height: 100%;

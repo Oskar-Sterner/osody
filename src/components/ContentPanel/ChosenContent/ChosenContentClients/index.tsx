@@ -1,11 +1,11 @@
-import ProjectPanel from './ClientPanel';
+import ClientPanel from './ClientPanel';
 import { StyledChosenContentClients } from './StyledChosenContentClients';
 
 function ChosenContentClients() {
   return (
     <>
       <StyledChosenContentClients>
-        <ProjectPanel />
+        <ClientPanel />
       </StyledChosenContentClients>
     </>
   );
