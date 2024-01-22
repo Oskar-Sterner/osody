@@ -5,11 +5,12 @@ import {
   StyledSmallP,
 } from '../../../../StyledElements/TextElements';
 import { useGetProjectPanels } from '../../../../../hooks/queries';
+import Loader from '../../../../StyledElements/Loader';
 
 function ProjectPanel() {
   const { projectPanels, loading, error } = useGetProjectPanels();
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loader />;
   if (error) return <div>Error: {error}</div>;
 
   return (

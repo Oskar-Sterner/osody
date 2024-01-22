@@ -1,41 +1,46 @@
-import ChosenContent, {
-  ContentType,
-} from '../../../../utils/ContentPanel/ChosenContent';
 import { StyledP } from '../../../StyledElements/TextElements';
 import { ActiveComponentContext } from '../../../../ActiveComponentContext';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { useGetChosenContent, ChosenContent } from '../../../../hooks/queries';
 import { StyledImg } from '../../../StyledElements/ImageElements';
+import Loader from '../../../StyledElements/Loader';
 
 function ChosenContentDescription() {
   const { activeComponent } = useContext(ActiveComponentContext);
+  const { chosenContent, loading, error } = useGetChosenContent();
+  const [content, setContent] = useState<ChosenContent | null>(null);
 
-  let content: ContentType;
-  switch (activeComponent) {
-    case 'projects':
-      content = ChosenContent[0];
-      break;
-    case 'about':
-      content = ChosenContent[1];
-      break;
-    case 'mail':
-      content = ChosenContent[2];
-      break;
-    case 'clients':
-      content = ChosenContent[3];
-      break;
-    default:
-      throw new Error(`Invalid activeComponent: ${activeComponent}`);
-  }
+  useEffect(() => {
+    if (!loading && !error) {
+      switch (activeComponent) {
+        case 'projects':
+          setContent(chosenContent[0]);
+          break;
+        case 'about':
+          setContent(chosenContent[1]);
+          break;
+        case 'mail':
+          setContent(chosenContent[2]);
+          break;
+        case 'clients':
+          setContent(chosenContent[3]);
+          break;
+        default:
+          throw new Error(`Invalid activeComponent: ${activeComponent}`);
+      }
+    }
+  }, [activeComponent, chosenContent, loading, error]);
 
-  return activeComponent === 'about' && content.img ? (
-    <StyledImg
-      src={content.img}
-      alt={content.title}
-      calculatedheight="100%"
-      borderradius="15px"
-    />
-  ) : (
-    <StyledP>{content.description}</StyledP>
+  if (loading) return <Loader />;
+  if (error) return <StyledP>Error: {error}</StyledP>;
+
+  return (
+    <>
+      {activeComponent !== 'about' && <StyledP>{content?.description}</StyledP>}
+      {activeComponent === 'about' && content?.img && (
+        <StyledImg src={content.img} calculatedheight="100%" />
+      )}
+    </>
   );
 }
 

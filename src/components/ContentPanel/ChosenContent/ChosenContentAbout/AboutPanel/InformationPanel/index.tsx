@@ -1,54 +1,47 @@
+import React from 'react';
 import {
   StyledH2,
   StyledH3,
   StyledP,
 } from '../../../../../StyledElements/TextElements';
 import { StyledInformationPanel } from './StyledInformationPanel';
-import InformationPanelData from '../../../../../../utils/ContentPanel/InformationPanel';
 import { StyledImg } from '../../../../../StyledElements/ImageElements';
 import { StyledToolsPanel } from './StyledToolsPanel';
+import {
+  InformationPanelType,
+  useGetInformationPanel,
+} from '../../../../../../hooks/queries';
+import Loader from '../../../../../StyledElements/Loader';
 
 function InformationPanel() {
+  const { informationPanel, loading, error } = useGetInformationPanel();
+
+  if (loading) return <Loader />;
+  if (error) return <div>Error: {error.message}</div>;
+
   return (
     <>
-      {InformationPanelData.map((panelData, index) => (
+      {informationPanel.map((panelData: InformationPanelType, index) => (
         <StyledInformationPanel key={index}>
           <StyledH2>{panelData.title}</StyledH2>
           <StyledP>{panelData.description}</StyledP>
-          <StyledH3>{panelData.use}</StyledH3>
-          <StyledP>{panelData.ides}</StyledP>
-          <StyledToolsPanel>
-            {panelData.idesIcons.map((icon, iconIndex) => (
-              <StyledImg
-                width="32px"
-                key={iconIndex}
-                src={icon}
-                alt={panelData.title}
-              />
-            ))}
-          </StyledToolsPanel>
-          <StyledP>{panelData.languages}</StyledP>
-          <StyledToolsPanel>
-            {panelData.languagesIcons.map((icon, iconIndex) => (
-              <StyledImg
-                width="32px"
-                key={iconIndex}
-                src={icon}
-                alt={panelData.title}
-              />
-            ))}
-          </StyledToolsPanel>
-          <StyledP>{panelData.editing}</StyledP>
-          <StyledToolsPanel>
-            {panelData.editingIcons.map((icon, iconIndex) => (
-              <StyledImg
-                width="32px"
-                key={iconIndex}
-                src={icon}
-                alt={panelData.title}
-              />
-            ))}
-          </StyledToolsPanel>
+          {panelData.sections.map((section, sectionIndex) => (
+            <React.Fragment key={sectionIndex}>
+              <StyledH3>{section.sectionTitle}</StyledH3>
+              <StyledP>{section.sectionContent}</StyledP>
+              <StyledToolsPanel>
+                {section.sectionIcons.map((icon, iconIndex) => (
+                  <StyledImg
+                    width="32px"
+                    key={iconIndex}
+                    src={icon}
+                    alt={section.sectionTitle}
+                    borderradius="0px"
+                  />
+                ))}
+              </StyledToolsPanel>
+            </React.Fragment>
+          ))}
         </StyledInformationPanel>
       ))}
     </>

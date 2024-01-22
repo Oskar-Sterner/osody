@@ -27,5 +27,5 @@ export const StyledImg = styled.img<StyledProps>`
   height: ${props => props.height || 'auto'};
   height: ${({ calculatedheight }) => `calc(${calculatedheight} - 54px)`};
   width: ${props => props.width || 'auto'};
-  border-radius: ${props => props.borderradius || '0'};
+  border-radius: ${props => props.borderradius || '15px'};
 `;

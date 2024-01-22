@@ -1,15 +1,26 @@
 import { StyledClientPanel } from './StyledClientPanel';
-import ClientPanels from '../../../../../utils/ContentPanel/ClientPanels';
 import { StyledAnchorClientPanel } from './StyledAnchorClientPanel';
 import {
   StyledH3,
   StyledSmallP,
 } from '../../../../StyledElements/TextElements';
+import { useGetClientPanels } from '../../../../../hooks/queries';
+import Loader from '../../../../StyledElements/Loader';
 
 function ClientPanel() {
+  const { clientPanels, loading, error } = useGetClientPanels();
+
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <>
-      {ClientPanels.map((panel, index) => (
+      {clientPanels.map((panel, index) => (
         <StyledAnchorClientPanel
           key={index}
           href={panel.link}
