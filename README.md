@@ -1,30 +1,42 @@
-# React + TypeScript + Vite
+# OSODY STUDIOS 🎨🖥️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![OSODY STUDIOS Website](https://i.imgur.com/jjtWJSf.png)
 
-Currently, two official plugins are available:
+Welcome to OSODY STUDIOS, where creativity meets technology! Our project is designed to empower users with a seamless experience for managing content and bringing their digital visions to life.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation ⚙️
 
-## Expanding the ESLint configuration
+To get started with OSODY STUDIOS, you'll need to have Node.js installed on your machine. Once you have Node.js set up, follow these steps to install the project dependencies and run the development server:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+npm i         # Install project dependencies
+npm run dev   # Run the development server
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Setting Up MongoDB 🗄️
+
+Before you can use all the features of OSODY STUDIOS, you'll need to set up a MongoDB account and create a database. Follow these steps to get your database ready:
+
+1. Sign up or log in to your MongoDB account.
+2. Create a new database named osodyStudiosDB.
+3. Within this database, create the collections as specified in the db.ts file. Note that the collection names are placeholders and can be customized to suit your needs.
+4. Remember to add your MongoDB credentials to a .env file in the root of the project directory. The .env file should include your database connection string, like so:
+
+```bash
+MONGODB_URI=your_mongodb_connection_string_here
+```
+
+# Content Management System 🗃️
+
+![OSODY STUDIOS Website](https://i.imgur.com/sDp6jOG.png)
+
+Our project features its own Content Management System (CMS), which is securely locked behind an admin account. This system allows for easy updates to website content without the need to change any code, making content management a breeze for administrators.
+
+# Using the Project 🚀
+
+Once you've completed the installation and set up your MongoDB database, you're ready to use OSODY STUDIOS. Navigate through the project using the development server you've started with npm run dev. This will allow you to explore the functionalities of our CMS, update content dynamically, and fully experience the capabilities of OSODY STUDIOS.
+
+# Contributing 🤝
+
+We welcome contributions to OSODY STUDIOS! If you have suggestions for improvements or new features, feel free to fork the repository, make your changes, and submit a pull request. We appreciate your input in making our project even better.
+
