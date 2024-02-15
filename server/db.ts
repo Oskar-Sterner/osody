@@ -1,4 +1,5 @@
 import { MongoClient } from 'mongodb';
+import bcrypt from 'bcrypt';
 
 type Project = {
   title: string;
@@ -73,6 +74,11 @@ const ChosenContent: Content[] = [
     title: 'Clients',
     description:
       'Curious about who we have been wortking with? Explore some of our beloved clients we have partnered with over the years and see the projects we have undertaken together.',
+  },
+  {
+    title: 'Dashboard',
+    description:
+      'Here is the admin dashboard where you can manage your projects, clients, and other content on the site!',
   },
 ];
 
@@ -218,6 +224,50 @@ const TeamPanel: TeamPanelType[] = [
     ],
   },
 ];
+
+export async function createAdminAccount(client: MongoClient): Promise<void> {
+  const password = process.env.A_ACCOUNT_PASS || '';
+  const saltRounds = 10;
+  const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+  try {
+    await client.connect();
+    const database = client.db('accounts');
+    const collection = database.collection('a_accounts');
+    const existingAccount = await collection.findOne({ username: 'Atlas' });
+    if (!existingAccount) {
+      await collection.insertOne({
+        username: 'Atlas',
+        password: hashedPassword,
+      });
+      console.log('🟢 Admin account created successfully!');
+    } else {
+      console.log('🟠 Admin account already exists!');
+    }
+  } finally {
+    await client.close();
+  }
+}
+
+export async function checkCredentials(
+  client: MongoClient,
+  username: string,
+  password: string
+): Promise<boolean> {
+  try {
+    await client.connect();
+    const database = client.db('accounts');
+    const collection = database.collection('a_accounts');
+    const user = await collection.findOne({ username });
+
+    if (user && (await bcrypt.compare(password, user.password))) {
+      return true;
+    }
+    return false;
+  } finally {
+    await client.close();
+  }
+}
 
 export async function updateTeamPanel(client: MongoClient): Promise<void> {
   try {
@@ -407,7 +457,7 @@ export async function updateChosenContent(client: MongoClient): Promise<void> {
       } else {
         await collection.insertOne(chosenContent);
         console.log(
-          `🟢 Created new project: ${chosenContent.title} at index ${i}`
+          `🟢 Created new content: ${chosenContent.title} at index ${i}`
         );
       }
     }

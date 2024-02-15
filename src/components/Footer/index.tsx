@@ -3,6 +3,10 @@ import { StyledFooter } from './StyledFooter';
 import { Seperator } from '../StyledElements/Seperator';
 import { StyledSmallP } from '../StyledElements/TextElements';
 import { StyledFooterText } from './StyledFooterText';
+// Import SVG files
+import githubSVG from '../../assets/images/github.svg';
+import discordSVG from '../../assets/images/discord.svg';
+import steamSVG from '../../assets/images/steam.svg';
 
 function Footer() {
   return (
@@ -10,16 +14,16 @@ function Footer() {
       <StyledFooter>
         <Seperator />
         <a href="https://github.com/OSODY-STUDIOS" target="_blank">
-          <InlineSVG src="/src/assets/images/github.svg" />
+          <InlineSVG src={githubSVG} />
         </a>
         <a href="https://discord.gg/FsTtQBdSPn" target="_blank">
-          <InlineSVG src="/src/assets/images/discord.svg" />
+          <InlineSVG src={discordSVG} />
         </a>
         <a
           href="https://steamcommunity.com/groups/osody-studios"
           target="_blank"
         >
-          <InlineSVG src="/src/assets/images/steam.svg" />
+          <InlineSVG src={steamSVG} />
         </a>
         <Seperator />
       </StyledFooter>

@@ -7,6 +7,7 @@ import { ActiveComponentContext } from '../../../ActiveComponentContext';
 import { StyledChosenContentText } from './StyledChosenContentText';
 import ChosenContentMail from './ChosenContentMail';
 import ChosenContentClients from './ChosenContentClients';
+import Dashboard from '../../Dashboard';
 
 function ChosenContent() {
   const { activeComponent } = useContext(ActiveComponentContext);
@@ -22,6 +23,7 @@ function ChosenContent() {
         {activeComponent === 'about' && <ChosenContentAbout />}
         {activeComponent === 'mail' && <ChosenContentMail />}
         {activeComponent === 'clients' && <ChosenContentClients />}
+        {activeComponent === 'dashboard' && <Dashboard />}
       </div>
     </>
   );

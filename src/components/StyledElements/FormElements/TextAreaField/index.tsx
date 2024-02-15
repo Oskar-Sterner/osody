@@ -7,6 +7,7 @@ interface TextAreaFieldProps {
   id: string;
   onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
   required?: boolean;
+  value?: string;
 }
 
 const TextAreaField: React.FC<TextAreaFieldProps> = ({
@@ -14,6 +15,7 @@ const TextAreaField: React.FC<TextAreaFieldProps> = ({
   id,
   onChange,
   required,
+  value,
 }) => {
   return (
     <div>
@@ -22,6 +24,7 @@ const TextAreaField: React.FC<TextAreaFieldProps> = ({
         id={id}
         onChange={onChange}
         required={required}
+        value={value}
       />{' '}
     </div>
   );

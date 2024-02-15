@@ -11,6 +11,7 @@ interface StyledProps {
   paddingleft?: string;
   underline?: boolean;
   uppercase?: boolean;
+  fontWeight?: number;
 }
 
 export const StyledH1 = styled.h1.withConfig({
@@ -90,7 +91,7 @@ export const StyledP = styled.p.withConfig({
   shouldForwardProp: prop => !['underline', 'uppercase'].includes(prop),
 })<StyledProps>`
   font-size: 18px;
-  font-weight: 400;
+  font-weight: ${props => props.fontWeight || '400'};
   line-height: 30px;
   letter-spacing: 0%;
   margin-top: ${props => props.margintop || '0'};

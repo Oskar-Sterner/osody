@@ -24,6 +24,9 @@ function ChosenContentTitle() {
         case 'clients':
           setContent(chosenContent[3]);
           break;
+        case 'dashboard':
+          setContent(chosenContent[4]);
+          break;
         default:
           throw new Error(`Invalid activeComponent: ${activeComponent}`);
       }

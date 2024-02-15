@@ -1,5 +1,9 @@
 import { StyledH2 } from '../../../../../StyledElements/TextElements';
-import { StyledTeamPanel } from './StyledTeamPanel';
+import {
+  StyledMemberCard,
+  StyledMemberPanel,
+  StyledTeamPanel,
+} from './StyledTeamPanel';
 import { useGetTeamPanel } from '../../../../../../hooks/queries';
 
 function TeamPanel() {
@@ -13,13 +17,15 @@ function TeamPanel() {
       {teamPanel.map((panel, index) => (
         <StyledTeamPanel key={index}>
           <StyledH2>{panel.title}</StyledH2>
-          {panel.members.map((member, memberIndex) => (
-            <div key={memberIndex}>
-              <img src={member.img} alt={member.name} />
-              <p>{member.name}</p>
-              <p>{member.role}</p>
-            </div>
-          ))}
+          <StyledMemberPanel>
+            {panel.members.map((member, memberIndex) => (
+              <StyledMemberCard key={memberIndex}>
+                <img src={member.img} alt={member.name} />
+                <p>{member.name}</p>
+                <p>{member.role}</p>
+              </StyledMemberCard>
+            ))}
+          </StyledMemberPanel>
         </StyledTeamPanel>
       ))}
     </>

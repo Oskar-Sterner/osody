@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-interface ProjectPanel {
+export interface ProjectPanel {
   title: string;
   description: string;
   link: string;
@@ -33,6 +33,35 @@ export function useGetProjectPanels() {
   return { projectPanels, loading, error };
 }
 
+export function useUpdateProjectPanels() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const updateProjectPanels = async (panels: ProjectPanel[]) => {
+    setLoading(true);
+    try {
+      const response = await fetch('http://localhost:3001/api/project-panels', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(panels),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      setLoading(false);
+    } catch (e) {
+      setError(error);
+      setLoading(false);
+    }
+  };
+
+  return { updateProjectPanels, loading, error };
+}
+
 export interface ChosenContent {
   title: string;
   description: string;
@@ -63,6 +92,35 @@ export function useGetChosenContent() {
   }, []);
 
   return { chosenContent, loading, error };
+}
+
+export function useUpdateChosenContent() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const updateChosenContent = async (contents: ChosenContent[]) => {
+    setLoading(true);
+    try {
+      const response = await fetch('http://localhost:3001/api/chosen-content', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(contents),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      setLoading(false);
+    } catch (e) {
+      setError(error);
+      setLoading(false);
+    }
+  };
+
+  return { updateChosenContent, loading, error };
 }
 
 export type ClientPanel = {
@@ -171,4 +229,94 @@ export function useGetTeamPanel() {
   }, []);
 
   return { teamPanel, loading, error };
+}
+
+export function useUpdateTeamPanel() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+
+  const updateTeamPanel = async (panel: TeamPanelType[]) => {
+    setLoading(true);
+    try {
+      const response = await fetch('http://localhost:3001/api/team-panel', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(panel),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      setLoading(false);
+    } catch (e) {
+      setError(e as Error);
+      setLoading(false);
+    }
+  };
+
+  return { updateTeamPanel, loading, error };
+}
+
+export function useUpdateClientPanels() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+
+  const updateClientPanels = async (panels: ClientPanel[]) => {
+    setLoading(true);
+    try {
+      const response = await fetch('http://localhost:3001/api/client-panels', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(panels),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      setLoading(false);
+    } catch (e) {
+      setError(e as Error);
+      setLoading(false);
+    }
+  };
+
+  return { updateClientPanels, loading, error };
+}
+
+export function useUpdateInformationPanel() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+
+  const updateInformationPanel = async (panel: InformationPanelType[]) => {
+    setLoading(true);
+    try {
+      const response = await fetch(
+        'http://localhost:3001/api/information-panel',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(panel),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      setLoading(false);
+    } catch (e) {
+      setError(e as Error);
+      setLoading(false);
+    }
+  };
+
+  return { updateInformationPanel, loading, error };
 }
